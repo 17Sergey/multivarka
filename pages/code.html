@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // "use strict";
+            function isPalindrome(str) {
+                return str === str.split("").reverse().join("");
+            }
+
+            function filterEvenNumbers(param) {
+                return [...new Set(param.filter((item) => item % 2 === 0))];
+            }
+            // console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 8, 10]));
+
+            function factorial(number) {
+                if (number === 0 || number === 1) return 1;
+
+                return number * factorial(number - 1);
+            }
+            // console.log(factorial(5));
+
+            function isPrime(num) {
+                for (let comp = 2; num < Math.sqrt(num); comp++) {
+                    if (num % comp === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            const numbers = [
+                2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
+                83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167,
+                173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263,
+                269, 271, 277, 281, 283, 293,
+            ];
+            // numbers.forEach((num) => console.log(isPrime(num)));
+
+            // Write a JavaScript program to find the largest element in a nested array.
+            function findLargestElement(nestedArray) {}
+            console.log(
+                findLargestElement([
+                    [1, 2, 3],
+                    [4, 5, 6],
+                ])
+            );
+            console.log(
+                findLargestElement([
+                    [-1, -2, -3],
+                    [-4, -5, -6],
+                ])
+            );
+            // console.log(findLargestElement([10, 20, 30, [40, 50, 60]]));
+            // console.log(findLargestElement([[], [1, 2], [3, 4, 5]]));
+            // console.log(findLargestElement([1, 2, "3"], [4, "five", 6]));
+
+            // console.log(1);
+
+            // setTimeout(() => console.log(2));
+
+            // Promise.resolve().then(() => {
+            //     console.log(3);
+            //     console.log("add");
+            // });
+
+            // Promise.resolve().then(() => console.log(4));
+
+            // setTimeout(() => console.log(5));
+
+            // new Promise((resolve) => {
+            //     console.log(6);
+            //     resolve();
+            // }).then(() => console.log(7));
+
+            // console.log(8);
+
+            // while ("") console.log(9);
+
+            // 1 6 8 3 add 4 7 2 5
+
+            const arr = [1, 5, -9, 0, 2, 7, 1, 10];
+
+            const res = arr.reduce((accumulator, current, index) => {
+                if (current > accumulator) return current;
+                else return accumulator;
+            }, arr[0]);
+
+            console.log(arr.reduce((sum, current) => (sum += current), 0));
+
+            function getAge() {
+                // "use strict";
+                age = 21;
+                console.log(age);
+            }
+
+            getAge();
+
+            function* genFibbonaci() {
+                let a = 0;
+                let b = 1;
+                while (true) {
+                    yield a;
+                    [a, b] = [b, a + b];
+                }
+            }
+
+            const generator = genFibbonaci();
+
+            // console.log(generator.next().value);
+            // console.log(generator.next().value);
+            // console.log(generator.next().value);
+            // console.log(generator.next().value);
+            // console.log(generator.next().value);
+            // console.log(generator.next().value);
+
+            function* range(start, end) {
+                for (let index = start; index < end; index++) {
+                    yield index;
+                }
+                return end;
+            }
+
+            const rangeGen = range(1, 5);
+            // console.log(rangeGen.next());
+            // console.log(rangeGen.next());
+            // console.log(rangeGen.next());
+            // console.log(rangeGen.next());
+            // console.log(rangeGen.next());
+
+            function* startGame() {
+                const answer = yield "Do you love JavaScript?";
+                if (answer !== "Yes") {
+                    return "Oh wow... Guess we're done here";
+                }
+                return "JavaScript loves you back ❤️";
+            }
+
+            const game = startGame();
+            console.log(game.next().value); // Do you love JavaScript?
+            console.log(game.next("Yes").value); // JavaScript loves you back ❤️
+
+            function* generatorOne() {
+                yield ["a", "b", "c"];
+            }
+
+            function* generatorTwo() {
+                yield* ["a", "b", "c"];
+            }
+
+            const one = generatorOne();
+            const two = generatorTwo();
+
+            // console.log(one.next().value);
+            // console.log(two.next().value);
+            // console.log(two.next().value);
+
+            const pr = Promise.resolve("123").then((value) => value);
+            console.log(pr);
+
+            const teams = [
+                { name: "Team 1", members: ["Paul", "Lisa"] },
+                { name: "Team 2", members: ["Laura", "Tim"] },
+            ];
+
+            function* getMembers(members) {
+                for (let i = 0; i < members.length; i++) {
+                    yield members[i];
+                }
+            }
+
+            function* getTeams(teams) {
+                for (let i = 0; i < teams.length; i++) {
+                    // ✨ SOMETHING IS MISSING HERE ✨
+                    yield* getMembers(teams[i]["members"]);
+                }
+            }
+
+            const obj = getTeams(teams);
+            console.log(obj.next()); //{ value: "Paul", done: false }
+            console.log(obj.next()); // { value: "Lisa", done: false }
+
+            function* range2(start, end) {
+                for (let index = start; index < end; index++) {
+                    if (start > end) yield;
+                    yield index;
+                }
+            }
+
+            const range2Gen = range2(10, 5);
+            // console.log(range2Gen.next().value);
+            // console.log(range2Gen.next().value);
+            // console.log(range2Gen.next().value);
+            console.log([...range2Gen]);
+
+            function* fib2(limit) {
+                let a = 0,
+                    b = 1;
+                while (a <= limit) {
+                    yield a;
+                    [a, b] = [b, a + b];
+                }
+            }
+
+            const fib2Gen = fib2(15);
+            console.log([...fib2Gen]);
+
+            function* gener() {
+                yield "1";
+                yield "2";
+                return "3";
+                yield "4";
+            }
+
+            const generr = gener();
+            console.log(generr.next()); // 1 false
+            console.log(generr.next()); // 2 false
+            console.log(generr.next()); // 3 true
+            console.log(generr.next()); // undefined true
+
+            const createCounter = () => {
+                let counter = 1;
+
+                return () => counter++;
+            };
+            const counter = createCounter();
+            console.log("Counter start");
+
+            console.log(counter()); // 1
+            console.log(counter()); // 2
+            console.log(counter()); // 3
+
+            console.log("-----");
+
+            const third = () => {
+                console.log(`Count is ${count}`);
+            };
+
+            const first = () => {
+                let count = 0;
+                return third;
+            };
+
+            const second = first();
+            second();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="../css/common.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../css/menu.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../css/structure.css"
+        />
+        <title>Structure</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu-container">
+                <a
+                    href="./theory.html"
+                    class="menu-item"
+                    >Теоретические сведения</a
+                >
+                <a
+                    href="./structure.html"
+                    class="menu-item"
+                    >Структура установки</a
+                >
+                <a
+                    href="#"
+                    class="menu-item"
+                    >Симулятор установки</a
+                >
+            </div>
+            <h1>Структура установки</h1>
+            <div class="structure">
+                <div class="buttons">
+                    <button onclick="changeImage('../img/structure/0.png')">Набросок схемы</button>
+                    <button onclick="changeImage('../img/structure/1.jpg')">
+                        1 - Стеклянный баллон
+                    </button>
+                    <button onclick="changeImage('../img/structure/2.jpg')">
+                        2 - Водяной манометр
+                    </button>
+                    <button onclick="changeImage('../img/structure/3.jpg')">
+                        3 - Воздушный насос
+                    </button>
+                    <button onclick="changeImage('../img/structure/4.jpg')">4 - Кран</button>
+                    <button onclick="changeImage('../img/structure/5.jpg')">5 - Пробка</button>
+                    <button>
+                        <a href="./structrure_map.html">Открыть страницу с картой</a>
+                    </button>
+                </div>
+                <div>
+                    <img
+                        src="../img/structure/0.png"
+                        alt="Картинка"
+                        class="image"
+                    />
+                </div>
+            </div>
+            <div class="map">
+                <div class="iframe_container">
+                    <!-- <iframe
+                        scrolling-y="no"
+                        class="iframe_map"
+                        title="map"
+                        src="../img/animate/map.html"
+                        frameborder="0"
+                    ></iframe> -->
+                </div>
+
+                <h2>Принцип работы с установкой</h2>
+                <!-- <video
+                    controls
+                    style="width: 800px; height: 500px"
+                >
+                    <source
+                        src="video.mp4"
+                        type="video/mp4"
+                    />
+                </video> -->
+            </div>
+        </div>
+
+        <script>
+            function changeImage(imageUrl) {
+                document.querySelector(".image").src = imageUrl;
+            }
+        </script>
+    </body>
+</html>

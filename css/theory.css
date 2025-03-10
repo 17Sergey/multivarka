@@ -1,0 +1,97 @@
+.formulas {
+    display: flex;
+    gap: 0.5em;
+}
+
+.formula {
+    font-family: "times new roman";
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 2em;
+    background-color: #eee;
+    padding: 1em;
+    font-size: 16px;
+    width: fit-content;
+    margin: 0.5em 0;
+
+    position: relative;
+}
+
+.variable {
+    font-size: 1.2em;
+    margin: 0 3px;
+}
+
+.operator {
+    font-size: 1.5em;
+    margin: 0 3px;
+}
+
+span.subscript {
+    font-size: 0.8em;
+    vertical-align: sub;
+    position: relative !important;
+    top: 4px !important;
+}
+
+.superscript {
+    position: relative;
+    top: 4px;
+}
+
+.tool-tip {
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0.5em;
+    padding: 1em;
+    width: fit-content;
+
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .tool-tip {
+        transform: translateX(-100%);
+    }
+}
+
+.screen {
+    border: 1px solid gray;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 1rem 0;
+}
+
+.screen-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.screen-content p {
+    line-height: 140%;
+}
+
+.screen-img {
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 300px) {
+    :root {
+        font-size: 10px;
+    }
+    .formula,
+    .variable,
+    .operator {
+        font-size: 1.2em;
+    }
+
+    .formulas {
+        flex-direction: column;
+    }
+}
