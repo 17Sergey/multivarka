@@ -46,7 +46,7 @@
             </div>
             <h1>Структура установки</h1>
             <div class="structure">
-                <div class="buttons">
+                <!-- <div class="buttons">
                     <button onclick="changeImage('../img/structure/0.png')">Набросок схемы</button>
                     <button onclick="changeImage('../img/structure/1.jpg')">
                         1 - Стеклянный баллон
@@ -69,29 +69,40 @@
                         alt="Картинка"
                         class="image"
                     />
-                </div>
+                </div> -->
             </div>
             <div class="map">
                 <div class="iframe_container">
-                    <!-- <iframe
-                        scrolling-y="no"
+                    <iframe
+                        style="
+                            width: 100%;
+                            max-width: 700px;
+                            height: 550px;
+                            margin: 0 auto;
+                            text-align: center;
+                            display: grid;
+                            place-items: center;
+                            padding-left: 300px;
+                        "
                         class="iframe_map"
                         title="map"
                         src="../img/animate/map.html"
                         frameborder="0"
-                    ></iframe> -->
+                    ></iframe>
                 </div>
 
-                <h2>Принцип работы с установкой</h2>
-                <!-- <video
-                    controls
-                    style="width: 800px; height: 500px"
-                >
-                    <source
-                        src="video.mp4"
-                        type="video/mp4"
-                    />
-                </video> -->
+                <h1>Принцип работы с установкой</h1>
+                <div style="display: grid; place-items: center; padding-left: 0px">
+                    <video
+                        controls
+                        style="max-width: 800px; height: 500px; margin: 0 auto; margin-top: -2rem"
+                    >
+                        <source
+                            src="../img/video.mp4"
+                            type="video/mp4"
+                        />
+                    </video>
+                </div>
             </div>
         </div>
 
